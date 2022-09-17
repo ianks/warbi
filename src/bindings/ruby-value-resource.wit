@@ -1,0 +1,8 @@
+resource ruby-value {
+    static from-str: func(input: string) -> ruby-value
+    static from-i64: func(input: s64) -> ruby-value
+    static from-f64: func(input: float64) -> ruby-value
+    static from-bool: func(input: bool) -> ruby-value
+
+    to-string: func() -> string
+}

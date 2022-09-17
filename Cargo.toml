@@ -1,0 +1,14 @@
+[package]
+name = "warbi"
+version = "0.1.0"
+edition = "2021"
+
+[target.'cfg(not(target_arch = "wasm32"))'.dependencies]
+wit-bindgen-host-wasmtime-rust = { git = "https://github.com/bytecodealliance/wit-bindgen", branch = "main" }
+magnus = { git = "https://github.com/matsadler/magnus" }
+
+[target.'cfg(target_arch = "wasm32")'.dependencies]
+wit-bindgen-guest-rust = { git = "https://github.com/bytecodealliance/wit-bindgen", branch = "main" }
+
+[build-dependencies]
+wit-bindgen-cli = { git = "https://github.com/bytecodealliance/wit-bindgen" }
